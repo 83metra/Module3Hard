@@ -3,22 +3,22 @@ def calculate_structure_sum(data_structure):
     if data_structure == []:
         return summa
     if isinstance(data_structure, dict):
-        print('dict', data_structure)
+        #print('dict', data_structure)
         for key, value in data_structure.items():
             summa += calculate_structure_sum(key)
             summa += calculate_structure_sum(value)
-            print(summa)
-            print(key, value)
+            #print(summa)
+            #print(key, value)
     elif isinstance(data_structure, (tuple, set, list)):
-        print('List, tuple, set', data_structure)
+        #print('List, tuple, set', data_structure)
         for i in data_structure:
             summa += calculate_structure_sum(i)
-            print(i)
+            #print(i)
     elif isinstance(data_structure, (int, float)):
-        print('int, float', data_structure)
+        #print('int, float', data_structure)
         summa += data_structure
     elif isinstance(data_structure, str):
-        print('str', data_structure)
+        #print('str', data_structure)
         summa += len(data_structure)
     return summa
 
